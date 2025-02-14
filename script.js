@@ -45,3 +45,4 @@ async function loadServices() {
 }
 
 window.onload = loadServices;
+alert("Services Loading Function Called!");
