@@ -4,11 +4,10 @@ import { auth, provider, signInWithPopup, signOut } from "./firebase-config.js";
 const db = getFirestore();
 const servicesList = document.getElementById("services-list");
 
-// 🔹 Function to Load Services from Firestore
 async function loadServices() {
     try {
         const querySnapshot = await getDocs(collection(db, "services"));
-        servicesList.innerHTML = ""; // पहले List को खाली करो
+        servicesList.innerHTML = "";
 
         querySnapshot.forEach((doc) => {
             const service = doc.data();
@@ -27,8 +26,6 @@ async function loadServices() {
         console.error("Error loading services:", error);
     }
 }
-
-// 🔹 Function to Handle Logout
 document.getElementById("logout-btn").addEventListener("click", () => {
     signOut(auth).then(() => {
         localStorage.removeItem("user");
@@ -36,7 +33,6 @@ document.getElementById("logout-btn").addEventListener("click", () => {
     }).catch((error) => {
         console.error("Logout Error:", error);
     });
-});
+})
 
-// 🔹 Load Services on Page Load
 window.onload = loadServices;
