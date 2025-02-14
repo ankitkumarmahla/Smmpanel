@@ -35,3 +35,5 @@ async function loadServices() {
 
 // Call the function when admin panel loads
 loadServices();
+import { getFirestore, collection, getDocs, deleteDoc, doc } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com
