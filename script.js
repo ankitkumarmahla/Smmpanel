@@ -1,4 +1,5 @@
-import { auth, provider, signInWithPopup, signOut } from "./firebase-config.js";
+import { auth, provider, signInWithPopup, signOut, db } from "./firebase-config.js";
+import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
 document.getElementById("google-login-btn").addEventListener("click", () => {
     signInWithPopup(auth, provider)
@@ -12,15 +13,19 @@ document.getElementById("google-login-btn").addEventListener("click", () => {
             alert("Login failed! Try again.");
         });
 });
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js";
 
-const db = getFirestore();
 const servicesContainer = document.getElementById("services-container");
 
 async function loadServices() {
     try {
         const querySnapshot = await getDocs(collection(db, "services"));
         servicesContainer.innerHTML = "";
+        
+        if (querySnapshot.empty) {
+            servicesContainer.innerHTML = "<p>No services available</p>";
+            return;
+        }
+
         querySnapshot.forEach((doc) => {
             const service = doc.data();
             const serviceElement = document.createElement("div");
@@ -35,6 +40,7 @@ async function loadServices() {
         });
     } catch (error) {
         console.error("Error loading services:", error);
+        servicesContainer.innerHTML = "<p>Failed to load services. Try again later.</p>";
     }
 }
 
