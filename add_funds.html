@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Funds</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Add Funds</h2>
+        <p>Scan the QR code or use the UPI ID to send payment.</p>
+        
+        <img src="upi_qr.png" alt="UPI QR Code" width="200">
+        <p><strong>UPI ID:</strong> yourupi@upi</p>
+        
+        <label for="amount">Enter Paid Amount:</label>
+        <input type="number" id="amount" placeholder="Enter amount" required>
+        
+        <button id="confirmPayment">I Have Paid</button>
+        
+        <p id="message"></p>
+    </div>
+
+    <script type="module" src="add_funds.js"></script>
+</body>
+</html>
