@@ -99,3 +99,6 @@ button:hover {
 #logout-btn:hover {
     background: #c1351d;
 }
+#name {
+    display: none;
+}
