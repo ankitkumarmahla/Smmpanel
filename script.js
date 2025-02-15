@@ -22,3 +22,10 @@ function fetchWalletBalance(userId) {
         console.error("Error fetching wallet balance: ", error);
     });
 } 
+document.getElementById("logoutBtn").addEventListener("click", function() {
+    firebase.auth().signOut().then(() => {
+        window.location.href = "login.html"; // लॉगआउट के बाद यूजर को लॉगिन पेज पर भेजें
+    }).catch((error) => {
+        console.error("Logout Error: ", error);
+    });
+});
