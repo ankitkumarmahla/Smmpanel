@@ -111,3 +111,23 @@ googleLoginBtn.addEventListener("click", async () => {
         alert("Error: " + error.message);
     }
 });
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+// अब Firebase Authentication को एक्सेस कर सकते हैं
+document.getElementById("login-btn").addEventListener("click", function () {
+    let email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+
+    signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            alert("Login Successful!");
+        })
+        .catch((error) => {
+            alert("Error: " + error.message);
+        });
+});
