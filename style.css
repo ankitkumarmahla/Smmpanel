@@ -1,4 +1,4 @@
-/* Stylish Background */
+
 body {
     font-family: 'Arial', sans-serif;
     background: url('https://source.unsplash.com/1600x900/?technology') no-repeat center center fixed;
@@ -7,7 +7,6 @@ body {
     padding: 0;
 }
 
-/* Centering the Form */
 .container {
     display: flex;
     justify-content: center;
@@ -15,7 +14,6 @@ body {
     height: 100vh;
 }
 
-/* Form Styling */
 .form-box {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
@@ -26,13 +24,11 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Headings */
 h2 {
     margin-bottom: 20px;
     color: #fff;
 }
 
-/* Input Fields */
 input {
     width: 100%;
     padding: 10px;
@@ -43,7 +39,6 @@ input {
     font-size: 16px;
 }
 
-/* Buttons */
 button {
     width: 100%;
     padding: 10px;
@@ -60,7 +55,14 @@ button:hover {
     background: #45a049;
 }
 
-/* Toggle Login/Register */
+.google-btn {
+    background: #db4437;
+}
+
+.google-btn:hover {
+    background: #c1351d;
+}
+
 #toggle-form {
     margin-top: 10px;
     color: #fff;
