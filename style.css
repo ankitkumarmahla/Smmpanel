@@ -72,3 +72,30 @@ button:hover {
     color: #4CAF50;
     cursor: pointer;
 }
+
+/* Dashboard Container */
+.dashboard-container {
+    width: 350px;
+    margin: 100px auto;
+    padding: 20px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Logout Button */
+#logout-btn {
+    background: #db4437;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#logout-btn:hover {
+    background: #c1351d;
+}
