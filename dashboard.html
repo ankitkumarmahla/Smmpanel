@@ -3,19 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>User Dashboard</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="dashboard-container">
-        <h1>Welcome, <span id="user-name"></span></h1>
-        <button id="logout-btn">Logout</button
-                                          
-        <h2>Available Services</h2>
-<div id="services-container"></div>
-        
-    <script type="module" src="firebase-config.js"></script>
-    <script type="module" src="user.js"></script>
+        <h2>Welcome, <span id="user-name">Loading...</span></h2>
+        <p>Email: <span id="user-email">Loading...</span></p>
+        <h3>Wallet Balance: ₹<span id="wallet-balance">0.00</span></h3>
+        <button id="logout-btn">Logout</button>
+    </div>
+
+    <script type="module" src="dashboard.js"></script>
 </body>
 </html>
-<div id="services-container"></div>
