@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMM Panel - Login</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login to SMM Panel</h2>
-        <button id="google-login-btn" class="google-btn">Login with Google</button>
+    <div class="container">
+        <div class="form-box">
+            <h2 id="form-title">Login</h2>
+            <input type="email" id="email" placeholder="Enter Email">
+            <input type="password" id="password" placeholder="Enter Password">
+            <button id="login-btn">Login</button>
+            <button id="register-btn">Create Account</button>
+            <p id="toggle-form">Don't have an account? <span>Sign up</span></p>
+        </div>
     </div>
-    <script type="module" src="firebase-config.js"></script>
-    <script type="module" src="script.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
