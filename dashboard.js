@@ -54,3 +54,24 @@ logoutBtn.addEventListener("click", () => {
         alert("Error logging out: " + error.message);
     });
 });
+
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+const db = getFirestore();
+const auth = getAuth();
+
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const userRef = doc(db, "users", user.uid);
+        const userSnap = await getDoc(userRef);
+        
+        if (userSnap.exists()) {
+            document.getElementById("wallet-balance").innerText = userSnap.data().balance.toFixed(2);
+        } else {
+            console.log("No user data found!");
+        }
+    } else {
+        window.location.href = "index.html"; // Agar user logged in nahi hai to redirect karo
+    }
+});
